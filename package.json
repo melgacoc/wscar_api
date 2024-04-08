@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "@types/node": "^20.12.5",
+    "prisma": "^5.12.1",
+    "typescript": "^5.4.4"
+  },
+  "dependencies": {
+    "@fastify/cors": "^9.0.1",
+    "@prisma/client": "^5.12.1",
+    "express": "^4.19.2",
+    "fastify": "^4.26.2",
+    "tsx": "^4.7.2"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts"
+  }
+}
