@@ -1,16 +1,20 @@
 import Fastify from 'fastify';
-import cors from '@fastify/cors';
 import { routes } from './routes';
 
 const portHost = process.env.PORT || 3030;
 
 const app = Fastify({ logger: true });
 
+app.addHook('onSend', (request, reply, payload, next) => {
+  reply.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 const start = async () => {
   await app.register(routes);
 
   try {
-    await app.listen(portHost);
+    await app.listen({portHost});
   } catch (err) {
     console.error('Erro ao iniciar o servidor:', err);
     process.exit(1);
