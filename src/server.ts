@@ -1,6 +1,7 @@
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import { routes } from './routes';
+const port = process.env.PORT || 3030;
 
 const app = Fastify({ logger: true });
 
