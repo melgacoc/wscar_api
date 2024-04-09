@@ -13,6 +13,7 @@
   },
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "prisma generate && npm run dev"
+    "build": "prisma generate && npm run dev",
+    "start": "node dist/server.js"
   }
 }
