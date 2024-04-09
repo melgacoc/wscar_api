@@ -7,7 +7,6 @@ const portHost = process.env.PORT || 3030;
 const app = Fastify({ logger: true });
 
 const start = async () => {
-  await app.register(cors);
   await app.register(routes);
 
   try {
