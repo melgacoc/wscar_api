@@ -14,7 +14,8 @@ const start = async () => {
   await app.register(routes);
 
   try {
-    await app.listen({portHost});
+    await app.listen(parseInt(portHost));
+
   } catch (err) {
     console.error('Erro ao iniciar o servidor:', err);
     process.exit(1);
