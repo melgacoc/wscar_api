@@ -2,6 +2,7 @@ import Fastify from 'fastify';
 import { routes } from './routes';
 
 const portHost = process.env.PORT || 3030;
+const hostAdress = '0.0.0.0'
 
 const app = Fastify({ logger: true });
 
@@ -14,7 +15,7 @@ const start = async () => {
   await app.register(routes);
 
   try {
-    await app.listen(parseInt(portHost));
+    await app.listen(portHost, hostAdress);
 
   } catch (err) {
     console.error('Erro ao iniciar o servidor:', err);
